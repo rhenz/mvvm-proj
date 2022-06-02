@@ -24,5 +24,15 @@ class WeatherDayTableViewCell: UITableViewCell {
         // Configure Cell
         selectionStyle = .none
     }
+    
+    // MARK: - Public API
+    func configure(with presentable: WeekDayPresentable) {
+        // Configure Icon Image View
+        dayLabel.text = presentable.day
+        dateLabel.text = presentable.date
+        temperatureLabel.text = presentable.temperature
+        windSpeedLabel.text = presentable.windSpeed
+        iconImageView.image = UIImage.imageForIcon(with: presentable.image)
+    }
 
 }

@@ -62,3 +62,5 @@ struct WeekDayViewModel {
         }
     }
 }
+
+extension WeekDayViewModel: WeekDayPresentable { }

@@ -115,11 +115,7 @@ extension WeekViewController: UITableViewDataSource {
 
         if let weekDayViewModel = viewModel?.viewModel(for: indexPath.item) {
             // Configure Cell
-            cell.dayLabel.text = weekDayViewModel.day
-            cell.dateLabel.text = weekDayViewModel.date
-            cell.temperatureLabel.text = weekDayViewModel.temperature
-            cell.windSpeedLabel.text = weekDayViewModel.windSpeed
-            cell.iconImageView.image = imageForIcon(withName: weekDayViewModel.image)
+            cell.configure(with: weekDayViewModel)
         }
 
         return cell
