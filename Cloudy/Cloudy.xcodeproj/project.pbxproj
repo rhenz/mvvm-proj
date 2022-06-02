@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C917BF812848EFEF00973A96 /* WeekDayPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BF802848EFEF00973A96 /* WeekDayPresentable.swift */; };
 		C917BF942848F31A00973A96 /* SettingsTimeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */; };
+		C917BF962848FFD500973A96 /* SettingsUnitsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BF952848FFD500973A96 /* SettingsUnitsViewModelTests.swift */; };
 		C936D4DA284602CC00D89867 /* WeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4D9284602CC00D89867 /* WeekViewModel.swift */; };
 		C936D4DC284603EB00D89867 /* WeekDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4DB284603EB00D89867 /* WeekDayViewModel.swift */; };
 		C936D4E128462DD900D89867 /* SettingsTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4E028462DD900D89867 /* SettingsTimeViewModel.swift */; };
@@ -62,6 +63,7 @@
 		C917BF802848EFEF00973A96 /* WeekDayPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayPresentable.swift; sourceTree = "<group>"; };
 		C917BF862848F26E00973A96 /* CloudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeViewModelTests.swift; sourceTree = "<group>"; };
+		C917BF952848FFD500973A96 /* SettingsUnitsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitsViewModelTests.swift; sourceTree = "<group>"; };
 		C936D4D9284602CC00D89867 /* WeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModel.swift; sourceTree = "<group>"; };
 		C936D4DB284603EB00D89867 /* WeekDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayViewModel.swift; sourceTree = "<group>"; };
 		C936D4E028462DD900D89867 /* SettingsTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */,
+				C917BF952848FFD500973A96 /* SettingsUnitsViewModelTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C917BF942848F31A00973A96 /* SettingsTimeViewModelTests.swift in Sources */,
+				C917BF962848FFD500973A96 /* SettingsUnitsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
