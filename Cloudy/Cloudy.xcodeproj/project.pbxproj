@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C917BF812848EFEF00973A96 /* WeekDayPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BF802848EFEF00973A96 /* WeekDayPresentable.swift */; };
+		C917BF942848F31A00973A96 /* SettingsTimeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */; };
 		C936D4DA284602CC00D89867 /* WeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4D9284602CC00D89867 /* WeekViewModel.swift */; };
 		C936D4DC284603EB00D89867 /* WeekDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4DB284603EB00D89867 /* WeekDayViewModel.swift */; };
 		C936D4E128462DD900D89867 /* SettingsTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936D4E028462DD900D89867 /* SettingsTimeViewModel.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		C917BF802848EFEF00973A96 /* WeekDayPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayPresentable.swift; sourceTree = "<group>"; };
 		C917BF862848F26E00973A96 /* CloudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeViewModelTests.swift; sourceTree = "<group>"; };
 		C936D4D9284602CC00D89867 /* WeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModel.swift; sourceTree = "<group>"; };
 		C936D4DB284603EB00D89867 /* WeekDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayViewModel.swift; sourceTree = "<group>"; };
 		C936D4E028462DD900D89867 /* SettingsTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimeViewModel.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		C917BF8F2848F27200973A96 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C917BF932848F31A00973A96 /* SettingsTimeViewModelTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				TargetAttributes = {
 					C917BF852848F26E00973A96 = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 						TestTargetID = CC4AF17D246E83960013D68C;
 					};
 					CC4AF17D246E83960013D68C = {
@@ -531,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C917BF942848F31A00973A96 /* SettingsTimeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,16 +616,23 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BJQF9JJWDE;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.CloudyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cloudy.app/Cloudy";
@@ -632,12 +644,18 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BJQF9JJWDE;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.CloudyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
