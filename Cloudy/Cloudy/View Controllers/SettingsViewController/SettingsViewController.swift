@@ -111,8 +111,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Configure Cell
         if let viewModel = viewModel {
-            cell.mainLabel.text = viewModel.text
-            cell.accessoryType = viewModel.shouldDisplayCheckmarkAccessory ? .checkmark : .none
+            cell.configure(with: viewModel)
         }
         
         return cell

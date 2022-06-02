@@ -20,5 +20,15 @@ class SettingsTableViewCell: UITableViewCell {
         // Configure Cell
         selectionStyle = .none
     }
+    
+    // MARK: - Public API
+    
+    func configure(with presentable: SettingsPresentable) {
+        // Configure Main Label
+        mainLabel.text = presentable.text
+        
+        // Set Accessory Type
+        accessoryType = presentable.shouldDisplayCheckmarkAccessory ? .checkmark : .none
+    }
 
 }
