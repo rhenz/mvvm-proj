@@ -21,7 +21,7 @@ class SettingsUnitsViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Reset User Defaults to Original Time Notation
         guard let currentUnitNotationRawValue = currentUnitNotationRawValue else {
-            XCTFail("currentTimeNotationRawValue should not be nil")
+            XCTFail("currentUnitNotationRawValue should not be nil")
             return
         }
 
