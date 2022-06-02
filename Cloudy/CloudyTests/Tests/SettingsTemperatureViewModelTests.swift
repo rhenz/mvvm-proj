@@ -35,7 +35,7 @@ class SettingsTemperatureViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.text, "Celcius")
     }
     
-    func test_TextFahrenhei() {
+    func test_TextFahrenheit() {
         let viewModel = SettingsTemperatureViewModel(temperatureNotation: .fahrenheit)
         XCTAssertEqual(viewModel.text, "Fahrenheit")
     }
