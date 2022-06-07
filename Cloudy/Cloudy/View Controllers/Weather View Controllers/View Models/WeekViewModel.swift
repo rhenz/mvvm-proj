@@ -10,7 +10,11 @@ import Foundation
 struct WeekViewModel {
     
     // MARK: - Properties
-    let weatherData: [WeatherDayData]
+    private let weatherData: [WeatherDayData]
+    
+    init(weatherData: [WeatherDayData]) {
+        self.weatherData = weatherData
+    }
     
     // MARK: - Public API
     var numberOfSections: Int {
