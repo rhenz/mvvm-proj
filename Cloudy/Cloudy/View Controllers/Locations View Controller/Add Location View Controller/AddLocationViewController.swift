@@ -89,6 +89,8 @@ class AddLocationViewController: UIViewController {
 
 }
 
+// MARK: - Table View Data Source
+
 extension AddLocationViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +114,8 @@ extension AddLocationViewController: UITableViewDataSource {
 
 }
 
+// MARK: - Table View Delegate
+
 extension AddLocationViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -126,6 +130,8 @@ extension AddLocationViewController: UITableViewDelegate {
     }
 
 }
+
+// MARK: - Search Bar Delegate
 
 extension AddLocationViewController: UISearchBarDelegate {
 

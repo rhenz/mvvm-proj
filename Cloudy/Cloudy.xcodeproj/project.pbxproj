@@ -22,6 +22,7 @@
 		C98BF11C284C99FB00701137 /* DayViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BF11B284C99FB00701137 /* DayViewViewModelTests.swift */; };
 		C98BF11E284CA7DB00701137 /* WeekViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BF11D284CA7DB00701137 /* WeekViewModelTests.swift */; };
 		C98BF120284CAA1100701137 /* WeekDayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98BF11F284CAA1100701137 /* WeekDayViewModelTests.swift */; };
+		C98E785E284F6557009341A3 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E785D284F6557009341A3 /* AddLocationViewModel.swift */; };
 		C9CDA89E2845F674006E772A /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDA89D2845F674006E772A /* DayViewModel.swift */; };
 		C9CDA8A32845FB02006E772A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDA8A22845FB02006E772A /* UIImage.swift */; };
 		CC4AF182246E83960013D68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AF181246E83960013D68C /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		C98BF11B284C99FB00701137 /* DayViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewViewModelTests.swift; sourceTree = "<group>"; };
 		C98BF11D284CA7DB00701137 /* WeekViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModelTests.swift; sourceTree = "<group>"; };
 		C98BF11F284CAA1100701137 /* WeekDayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayViewModelTests.swift; sourceTree = "<group>"; };
+		C98E785D284F6557009341A3 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		C9CDA89D2845F674006E772A /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		C9CDA8A22845FB02006E772A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CC4AF17E246E83960013D68C /* Cloudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,14 @@
 				C936D4E7284631CF00D89867 /* SettingsPresentable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C98E785C284F6548009341A3 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				C98E785D284F6557009341A3 /* AddLocationViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		C9CDA89C2845F64B006E772A /* View Models */ = {
@@ -360,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				CC4AF1A8246E84A20013D68C /* AddLocationViewController.swift */,
+				C98E785C284F6548009341A3 /* View Models */,
 			);
 			path = "Add Location View Controller";
 			sourceTree = "<group>";
@@ -574,6 +585,7 @@
 				CC4AF182246E83960013D68C /* AppDelegate.swift in Sources */,
 				CC4AF1B1246E84A20013D68C /* DayViewController.swift in Sources */,
 				C9CDA89E2845F674006E772A /* DayViewModel.swift in Sources */,
+				C98E785E284F6557009341A3 /* AddLocationViewModel.swift in Sources */,
 				CC4AF1CD246E84CC0013D68C /* Location.swift in Sources */,
 				CC4AF1D6246E94EC0013D68C /* TimeNotation.swift in Sources */,
 				CC4AF1B8246E84A20013D68C /* SettingsTableViewCell.swift in Sources */,
