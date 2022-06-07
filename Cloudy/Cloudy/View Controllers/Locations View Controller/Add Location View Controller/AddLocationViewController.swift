@@ -39,19 +39,6 @@ class AddLocationViewController: UIViewController {
         
         // Initialize View Model
         viewModel = AddLocationViewModel()
-        
-        // Configure View Model
-        viewModel.locationsDidChange = { [weak self] locations in
-            self?.tableView.reloadData()
-        }
-        
-        viewModel.queryingDidChange = { [weak self] querying in
-            if querying {
-                self?.activityIndicatorView.startAnimating()
-            } else {
-                self?.activityIndicatorView.stopAnimating()
-            }
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

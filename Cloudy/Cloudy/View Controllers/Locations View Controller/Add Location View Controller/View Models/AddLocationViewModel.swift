@@ -8,32 +8,30 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
 class AddLocationViewModel {
     
     // MARK: - Properties
     
-    var query: String = "" {
-        didSet {
-            geocode(addressString: query)
-        }
-    }
+    @Published var query: String = ""
     
     // MARK: -
     
-    private var querying = false {
-        didSet {
-            queryingDidChange?(querying)
-        }
-    }
+    @Published private(set) var querying = false
     
     // MARK: -
     
-    private var locations: [Location] = [] {
-        didSet {
-            locationsDidChange?(locations)
-        }
+    private var locations: [Location] {
+        get { locationsSubject.value }
+        set { locationsSubject.value = newValue }
     }
+    
+    var locationsPublisher: AnyPublisher<[Location], Never> {
+        locationsSubject.eraseToAnyPublisher()
+    }
+    
+    private var locationsSubject = CurrentValueSubject<[Location], Never>([])
     
     var hasLocations: Bool {
         numberOfLocations > 0
@@ -47,12 +45,13 @@ class AddLocationViewModel {
     
     private lazy var geocoder = CLGeocoder()
     
-    // MARK: -
-    
-    var queryingDidChange: ((Bool) -> Void)?
-    var locationsDidChange: (([Location]) -> Void)?
+    private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: - Public API
+    init() {
+        // Setup Bindings
+        setupBindings()
+    }
     
     func location(at index: Int) -> Location? {
         guard index < locations.count else {
@@ -71,6 +70,15 @@ class AddLocationViewModel {
     }
     
     // MARK: - Helper Methods
+    private func setupBindings() {
+        $query
+            .removeDuplicates()
+            .throttle(for: 0.5, scheduler: RunLoop.main, latest: true)
+            .sink { [weak self] addressString in
+                self?.geocode(addressString: addressString)
+            }.store(in: &subscriptions)
+    }
+    
     private func geocode(addressString: String?) {
         guard let addressString = addressString else {
             // Reset location
