@@ -1,1 +1,1 @@
-## MVVM Project - Cloudy
+## MVVM Practice Project - Cloudy - by Cocoacast
