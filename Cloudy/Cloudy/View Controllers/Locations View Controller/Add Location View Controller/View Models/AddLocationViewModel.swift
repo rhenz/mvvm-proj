@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 import Combine
 
 class AddLocationViewModel {
@@ -43,12 +42,16 @@ class AddLocationViewModel {
     
     // MARK: -
     
-    private lazy var geocoder = CLGeocoder()
+//    private lazy var geocoder = CLGeocoder()
+    private let locationService: LocationService
     
     private var subscriptions: Set<AnyCancellable> = []
     
     // MARK: - Public API
-    init() {
+    init(locationService: LocationService) {
+        // Set Location Service
+        self.locationService = locationService
+        
         // Setup Bindings
         setupBindings()
     }
@@ -91,25 +94,18 @@ class AddLocationViewModel {
         querying = true
         
         // Geocode Address String
-        geocoder.geocodeAddressString(addressString) { [weak self] placemarks, error in
-            // Create Buffer
-            var locations: [Location] = []
-            
+        locationService.geocode(addressString) { [weak self] result in
             // Update Helper
             self?.querying = false
             
-            if let error = error {
+            switch result {
+            case .success(let locations):
+                self?.locations = locations
+            case .failure(let error):
+                self?.locations = []
+                
                 print("Unable to Forward Geocode Address \(error)")
-            } else if let placemarks = placemarks {
-                locations = placemarks.compactMap({ placemark in
-                    guard let name = placemark.name else { return nil }
-                    guard let location = placemark.location else { return nil }
-                    return Location(name: name, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                })
             }
-            
-            // Update Locations
-            self?.locations = locations
         }
     }
 }

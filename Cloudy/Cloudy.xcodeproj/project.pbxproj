@@ -25,6 +25,8 @@
 		C98E785E284F6557009341A3 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E785D284F6557009341A3 /* AddLocationViewModel.swift */; };
 		C9CDA89E2845F674006E772A /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDA89D2845F674006E772A /* DayViewModel.swift */; };
 		C9CDA8A32845FB02006E772A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDA8A22845FB02006E772A /* UIImage.swift */; };
+		C9F543722851F67100F0BE82 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F543712851F67100F0BE82 /* LocationService.swift */; };
+		C9F543752851F7B000F0BE82 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F543742851F7B000F0BE82 /* Geocoder.swift */; };
 		CC4AF182246E83960013D68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AF181246E83960013D68C /* AppDelegate.swift */; };
 		CC4AF184246E83960013D68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AF183246E83960013D68C /* SceneDelegate.swift */; };
 		CC4AF189246E83960013D68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4AF187246E83960013D68C /* Main.storyboard */; };
@@ -86,6 +88,8 @@
 		C98E785D284F6557009341A3 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		C9CDA89D2845F674006E772A /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		C9CDA8A22845FB02006E772A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		C9F543712851F67100F0BE82 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		C9F543742851F7B000F0BE82 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		CC4AF17E246E83960013D68C /* Cloudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cloudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC4AF181246E83960013D68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC4AF183246E83960013D68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C9F543732851F7A200F0BE82 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9F543742851F7B000F0BE82 /* Geocoder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CC4AF175246E83960013D68C = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +275,7 @@
 				CC4AF1BE246E84B50013D68C /* Extensions */,
 				CC4AF1C3246E84BE0013D68C /* Managers */,
 				CC4AF1D1246E920E0013D68C /* Protocols */,
+				C9F543732851F7A200F0BE82 /* Services */,
 				C9CDA89F2845F935006E772A /* Utils */,
 				CC4AF1C8246E84CB0013D68C /* Models */,
 				CC4AF1D4246E94DE0013D68C /* Types */,
@@ -450,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				CC4AF1D2246E92450013D68C /* ReusableView.swift */,
+				C9F543712851F67100F0BE82 /* LocationService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -583,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4AF182246E83960013D68C /* AppDelegate.swift in Sources */,
+				C9F543752851F7B000F0BE82 /* Geocoder.swift in Sources */,
 				CC4AF1B1246E84A20013D68C /* DayViewController.swift in Sources */,
 				C9CDA89E2845F674006E772A /* DayViewModel.swift in Sources */,
 				C98E785E284F6557009341A3 /* AddLocationViewModel.swift in Sources */,
@@ -595,6 +610,7 @@
 				CC4AF1B4246E84A20013D68C /* LocationsViewController.swift in Sources */,
 				CC4AF1C2246E84B50013D68C /* UserDefaults.swift in Sources */,
 				CC4AF1CF246E84CC0013D68C /* WeatherDayData.swift in Sources */,
+				C9F543722851F67100F0BE82 /* LocationService.swift in Sources */,
 				CC4AF1C1246E84B50013D68C /* Conversions.swift in Sources */,
 				CC4AF1C5246E84BE0013D68C /* DataManager.swift in Sources */,
 				C917BF812848EFEF00973A96 /* WeekDayPresentable.swift in Sources */,

@@ -42,7 +42,7 @@ class AddLocationViewController: UIViewController {
         title = "Add Location"
         
         // Initialize View Model
-        viewModel = AddLocationViewModel()
+        viewModel = AddLocationViewModel(locationService: Geocoder())
         
         // Subscribe to Locations Publisher
         viewModel.locationsPublisher
