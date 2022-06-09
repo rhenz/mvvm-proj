@@ -63,7 +63,9 @@ class DayViewController: WeatherViewController {
         descriptionLabel.text = viewModel.summary
         temperatureLabel.text = viewModel.temperature
         windSpeedLabel.text = viewModel.windSpeed
-        iconImageView.image = imageForIcon(withName: viewModel.image)
+        
+        iconImageView.image = imageForIcon(withName: viewModel.image)?.withRenderingMode(.alwaysTemplate)
+        iconImageView.tintColor = .systemMint
     }
 
     // MARK: - Actions

@@ -32,7 +32,8 @@ class WeatherDayTableViewCell: UITableViewCell {
         dateLabel.text = presentable.date
         temperatureLabel.text = presentable.temperature
         windSpeedLabel.text = presentable.windSpeed
-        iconImageView.image = UIImage.imageForIcon(with: presentable.image)
+        iconImageView.image = UIImage.imageForIcon(with: presentable.image)?.withRenderingMode(.alwaysTemplate)
+        iconImageView.tintColor = .systemMint
     }
 
 }

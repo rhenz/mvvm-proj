@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol AddLocationViewControllerDelegate: AnyObject {
     func controller(_ controller: AddLocationViewController, didAddLocation location: Location)
@@ -28,6 +29,9 @@ class AddLocationViewController: UIViewController {
     // MARK: -
     
     private var viewModel: AddLocationViewModel!
+    
+    // MARK: -
+    private var subscriptions: Set<AnyCancellable> = []
 
     // MARK: - View Life Cycle
 
@@ -39,6 +43,22 @@ class AddLocationViewController: UIViewController {
         
         // Initialize View Model
         viewModel = AddLocationViewModel()
+        
+        // Subscribe to Locations Publisher
+        viewModel.locationsPublisher
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }.store(in: &subscriptions)
+        
+        // Subscribe to Querying
+        viewModel.$querying
+            .sink { [weak self] isQuerying in
+                if isQuerying {
+                    self?.activityIndicatorView.startAnimating()
+                } else {
+                    self?.activityIndicatorView.stopAnimating()
+                }
+            }.store(in: &subscriptions)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -99,6 +119,16 @@ extension AddLocationViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
 
         // Forward Geocode Address String
+        viewModel.query = searchBar.text ?? ""
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Update Query
+        viewModel.query = searchText
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        // Update QUery
         viewModel.query = searchBar.text ?? ""
     }
 
